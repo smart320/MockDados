@@ -1,0 +1,301 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+
+    <meta charset="utf-8" />
+    <title>{% block title %}{% endblock %}</title>
+    <meta name="viewport" content="width=device-width, initial-scale= 1.0">
+    <meta content="Smart320 Smart Energy" name="Energy Saving" />
+    <meta content="Smart320" name="Edison Brito" />
+
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css">
+   
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+   
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+   
+    <link rel="stylesheet" href="{% static 'assets/css/style.css' %}" type="text/css">
+
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
+  </head>
+  <body>
+
+
+    <div class="grid-container">
+      <div class="menu-icon">
+        <i class="fas fa-bars header__menu"></i>
+        </div>
+      <header class="header">
+        
+        <div class="header__search"><iconsearch class="ui right aligned search category focus">
+          <div class="ui icon input">
+            <input class="prompt" type="text" placeholder="Search icons..." autocomplete="off">
+            <i class="search icon"></i>
+          </div>
+          <div class="results"></div>
+        </iconsearch></div>
+        <div class="header__avatar"><img class="ui  avatar image" src="{% static 'assets/images/edison.png' %}">
+          <span>Edison Brito</span></div>
+          
+      </header>
+
+     
+      <div class="header-control">
+        {% block header-control %}
+       
+        {% endblock %}
+      <aside class="sidenav">
+        
+        
+          <div id="sidebar-son">
+            <div id="logo" class="" > 
+              <img src="{% static 'assets/images/logo/' %}" alt="">       
+             
+            </div>
+             
+            <div id="bar1"></div>
+            <div id="one" class="" > 
+              
+              <a href="{% url 'dashboard:dashboard_custom' %}"><i class="fa fa-television fa-lg "></i></a>        
+              <span id="sidebarTitle">Dashboard</span>
+            </div> 
+            <div id="two" class="" > 
+              <a href="{% url 'data:fuel' %}"><i class="fa fa-microchip fa-lg"></i></a> 
+              <span id="sidebarTitle">Meter</span>
+            </div>   
+          
+            <div id="three">
+              <a href="{% url 'data:split' %}"> <i class="fa fa-pie-chart fa-lg"></i></a> 
+              <span id="sidebarTitle">Split</span>
+            
+         
+            </div>
+            <div id="four">
+              <a href="{% url 'data:fuel_compare' %}"> <i class="fa fa-line-chart fa-lg"></i> </i></a> 
+              <span id="sidebarTitle">Analytics</span>
+            
+            </div>
+            <div id="five">
+              <a href="{% url 'device:motor_list' %}"> <i class="fa fa-gear fa-lg" ></i> </a> 
+              <span id="sidebarTitle">Settings</span>
+           
+            </div>
+            <div id="six">
+             
+            </div>
+            <div id="seven">
+             
+            </div>
+            <div id="eigth">
+            
+           
+            </div>
+            <div id="nine">
+           
+            </div>
+            <div id="ten">
+          
+           
+            </div>
+          
+          
+          
+          </div>  
+
+
+
+      </aside>
+      
+      {% block menu %}
+      
+      {% endblock %}
+     
+
+                                
+             
+      {% block main %}
+      <main>
+          
+      </main>
+      {% endblock %}
+
+
+
+ 
+ 
+ 
+ 
+      
+      <footer class="footer">
+        <div class="footer__copyright">&copy; 2020 Mega Hack</div>
+      <div class="footer__signature">Time 9</div>
+      </footer>
+    </div>
+
+
+<!--
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>-->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-modal/2.2.6/js/bootstrap-modal.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+ 
+<script>
+
+
+
+      const menuIconEl = $('.menu-icon');
+      const sidenavEl = $('.sidenav');
+      const sidenavCloseEl = $('.sidenav__close-icon');
+      const controlPanelEl = $('.control-panel');
+      const navDashboardEl = $('#one');
+      const navMeterEl = $('#two');
+      const navDemandEl = $('#three');
+      const navSplitEl = $('#four');
+      const navAnalyticsEl = $('#five');
+      const navReportEl = $('#six');
+      const navTeamEl = $('#seven');
+      const navSettingsEl = $('#eigth');
+
+      // Add and remove provided class names
+      
+      function toggleClassName(el, className) {
+        if (el.hasClass(className)) {
+          el.removeClass(className);
+        } else {
+          el.addClass(className);
+        }
+      }
+      // Open the side nav on click
+      menuIconEl.on('click', function() {
+        toggleClassName(sidenavEl, 'active');
+        toggleClassName(controlPanelEl, 'active');
+        console.log('Clicou MenuIcon')
+      });
+  
+      // Close the side nav on click
+      sidenavCloseEl.on('click', function() {
+        toggleClassName(sidenavEl, 'active');
+        toggleClassName(controlPanelEl, 'active');
+        console.log('Clicou SideNav')
+      });
+
+       // Close the side nav on click
+       navDashboardEl.on('click', function() {
+        toggleClassName(navDashboardEl, 'active'); 
+        
+        navMeterEl.removeClass('active');
+        navDemandEl.removeClass('active');
+        navSplitEl.removeClass('active');
+        navAnalyticsEl.removeClass('active');
+        navReportEl.removeClass('active');
+        navTeamEl.removeClass('active');
+        navSettingsEl.removeClass('active');
+      });
+
+      navMeterEl.on('click', function() {
+        toggleClassName(navMeterEl, 'active'); 
+        navDashboardEl.removeClass('active');  
+     
+        navDemandEl.removeClass('active');
+        navSplitEl.removeClass('active');
+        navAnalyticsEl.removeClass('active');
+        navReportEl.removeClass('active');
+        navTeamEl.removeClass('active');
+        navSettingsEl.removeClass('active');
+      });
+
+      navDemandEl.on('click', function() {
+        toggleClassName(navDemandEl, 'active'); 
+        navDashboardEl.removeClass('active');  
+        navMeterEl.removeClass('active');
+     
+        navSplitEl.removeClass('active');
+        navAnalyticsEl.removeClass('active');
+        navReportEl.removeClass('active');
+        navTeamEl.removeClass('active');
+        navSettingsEl.removeClass('active');
+      });
+
+      navSplitEl.on('click', function() {
+        toggleClassName(navSplitEl, 'active'); 
+        navDashboardEl.removeClass('active');  
+        navMeterEl.removeClass('active');
+        navDemandEl.removeClass('active'); 
+        navAnalyticsEl.removeClass('active');
+        navReportEl.removeClass('active');
+        navTeamEl.removeClass('active');
+        navSettingsEl.removeClass('active');
+      });
+
+      navAnalyticsEl.on('click', function() {
+        toggleClassName(navAnalyticsEl, 'active'); 
+        navDashboardEl.removeClass('active');  
+        navMeterEl.removeClass('active');
+        navDemandEl.removeClass('active');
+        navSplitEl.removeClass('active');
+       
+        navReportEl.removeClass('active');
+        navTeamEl.removeClass('active');
+        navSettingsEl.removeClass('active');
+      });
+
+      navReportEl.on('click', function() {
+        toggleClassName(navReportEl, 'active'); 
+        navDashboardEl.removeClass('active');  
+        navMeterEl.removeClass('active');
+        navDemandEl.removeClass('active');
+        navSplitEl.removeClass('active');
+        navAnalyticsEl.removeClass('active');
+    
+        navTeamEl.removeClass('active');
+        navSettingsEl.removeClass('active');
+      });
+
+      navTeamEl.on('click', function() {
+        toggleClassName(navTeamEl, 'active'); 
+        navDashboardEl.removeClass('active');  
+        navMeterEl.removeClass('active');
+        navDemandEl.removeClass('active');
+        navSplitEl.removeClass('active');
+        navAnalyticsEl.removeClass('active');
+        navReportEl.removeClass('active');
+     
+        navSettingsEl.removeClass('active');
+      });
+
+      navSettingsEl.on('click', function() {
+        toggleClassName(navSettingsEl, 'active'); 
+        navDashboardEl.removeClass('active');  
+        navMeterEl.removeClass('active');
+        navDemandEl.removeClass('active');
+        navSplitEl.removeClass('active');
+        navAnalyticsEl.removeClass('active');
+        navReportEl.removeClass('active');
+        navTeamEl.removeClass('active');
+ 
+      });
+
+
+
+
+
+
+
+
+
+
+  
+
+    </script>
+     {% block javascript %}{% endblock %}  
+  </body>
+</html>

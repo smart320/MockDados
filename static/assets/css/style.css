@@ -1,0 +1,492 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto);
+
+.ui.primary.button:hover {
+  box-shadow:
+    0px 0px 0px 1px rgba(0, 0, 0, 0.3) inset,
+    0px 2px 3px 0px rgba(0, 0, 0, 0.35) !important
+  ;
+}
+
+.ui.secondary.button:hover {
+  box-shadow:
+    0px 0px 0px 1px rgba(0, 0, 0, 0.2) inset,
+    0px 2px 3px 0px rgba(0, 0, 0, 0.3) !important
+  ;
+}
+
+
+body {
+  margin: 0;
+  padding: 0;
+  color: #666464;
+  font-family: 'Open Sans', Helvetica, sans-serif;
+  box-sizing: border-box;
+}
+
+
+.ui.avatar.image, .ui.avatar.image img, .ui.avatar.image svg, .ui.avatar.images .image, .ui.avatar.images img, .ui.avatar.images svg {
+
+  width: 3.2em;
+  height: 3.2em;
+
+}
+
+/* Assign grid instructions to our parent grid container, mobile-first (hide the sidenav) */
+.grid-container {
+  display: grid;
+  grid-template-columns:1fr;
+  grid-template-rows: 60px  60px 1fr 50px;
+  grid-template-areas:
+    "header" 
+    "header-control"
+    "main"
+    "footer";
+
+  height: 100vh;
+}
+
+.control-panel{
+
+  grid-area: control-panel;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 290px;
+  position: fixed;
+  overflow-y: auto;
+  transform: translateX(-300px);
+  transition: all .4s ease-in-out;
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.16), 0 0 0 2px rgba(0, 0, 0, 0.08);
+  
+  z-index: 2; /* Needs to sit above the hamburger menu icon */
+  background-color: #E5EBF1;
+}
+
+.header-control{
+  grid-area: header-control;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 16px;
+  background-color: #E5EBF1;
+}
+
+.menu-icon {
+  position: fixed; /* Needs to stay visible for all mobile scrolling */
+  display: flex;
+  top: 15px;
+  left: 10px;
+  align-items: center;
+  justify-content: center;
+  background-color: #DADAE3;
+  border-radius: 50%;
+  z-index: 1;
+  cursor: pointer;
+  padding: 12px;
+}
+
+/* Give every child element its grid name */
+.header {
+  grid-area: header;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 50px;
+  background-color: #FFFFFF;
+}
+
+/* Make room for the menu icon on mobile */
+.header__search {
+  margin-left: 42px;
+  
+}
+
+.sidenav {
+  grid-area: sidenav;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100px;
+  position: fixed;
+  overflow-y: auto;
+  transform: translateX(-300px);
+  transition: all .4s ease-in-out;
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.16), 0 0 0 1px rgba(0, 0, 0, 0.08);
+  z-index: 2; /* Needs to sit above the hamburger menu icon */
+  background-color: #147BAF;
+}
+
+.sidenav.active {
+  transform: translate(0);
+}
+
+
+
+.control-panel.active {
+  transform: translate(100px);
+}
+
+.sidenav__close-icon {
+  position: absolute;
+  visibility: visible;
+  top: 8px;
+  right: 12px;
+  cursor: pointer;
+  font-size: 20px;
+  color: #666464;
+}
+
+.sidenav__list {
+  padding: 0;
+  margin-top: 70px;
+  list-style-type: none;
+}
+
+.sidenav__list-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px 20px 20px 40px;
+  color: #ddd;
+  border-bottom: solid 1px #AEAFB3;
+}
+
+.sidenav__list-item:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  cursor: pointer;
+}
+
+
+
+
+
+#sidebar-son{
+  
+  display: grid;
+  height: 100%;
+  grid-template-columns: 100px;
+  grid-template-rows: 70px 80px 80px 80px 80px 80px 80px 80px 80px 80px 80px;
+  grid-template-areas: 
+    " logo"
+    " one" 
+    " two"
+    " three"
+    " four"
+    " five"
+    " six"
+    " seven"
+    " eigth"
+    "nine"
+    "ten";
+    
+}
+
+#logo{
+  grid-area: logo;
+  display: flex;
+  justify-content: center;
+ 
+}
+
+#bar1{
+  grid-area: bar1;
+
+  border-bottom: #AEAFB3 solid 1px;
+}
+
+
+#one{
+  font-size:25px;
+  grid-area: one;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  padding-top: 15px;
+  padding-bottom: 10px;
+}
+
+#teste{
+  background-color: #fff; 
+  height: 100px;
+    width: 5px;
+  margin-right: 60px;
+}
+
+#two{
+  font-size:25px;
+  grid-area: two;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  padding-top: 15px;
+  padding-bottom: 10px;
+}
+
+#three{
+  font-size:25px;
+  grid-area: three;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  padding-top: 15px;
+  padding-bottom: 10px;
+}
+
+#four{
+  font-size:25px;
+  grid-area: four;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  padding-top: 15px;
+  padding-bottom: 10px;
+}
+
+#five{
+  font-size:25px;
+  grid-area: five;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  padding-top: 15px;
+  padding-bottom: 10px;
+}
+
+#six{
+  font-size:25px;
+  grid-area: six;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  padding-top: 15px;
+  padding-bottom: 10px;
+}
+
+#seven{
+  font-size:25px;
+  grid-area: seven;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  padding-top: 15px;
+  padding-bottom: 10px;
+}
+
+#eigth{
+  font-size:25px;
+  grid-area: eigth;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  padding-top: 15px;
+  padding-bottom: 10px;
+}
+
+#nine{
+  font-size:25px;
+  grid-area: nine;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  padding-top: 15px;
+  padding-bottom: 10px;
+}
+
+#ten{
+  font-size:25px;
+  grid-area: ten;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  padding-top: 15px;
+  padding-bottom: 10px;
+}
+
+
+
+#one.active{
+  background-color: rgba(255, 255, 255, 0.2);
+}
+#two.active{
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+#three.active{
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+#four.active{
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+#five.active{
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+#six.active{
+  background-color: rgba(255, 255, 255, 0.2);
+}
+#seven.active{
+  background-color: rgba(255, 255, 255, 0.2);
+}
+#eigth.active{
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+#nine.active{
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+#ten.active{
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+#sidebarTitle{
+  
+  font-size: 16px;
+  color: #e3e6e9;
+}
+
+#sidebarTitle:hover{
+  
+  font-size: 18px;
+  color: #e3e6e9;
+}
+
+
+a{
+  color: #e3e6e9;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #e3e6e9;
+  text-decoration: none;
+}
+
+
+#one:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  cursor: pointer;
+
+  }
+
+#two:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  cursor: pointer;
+}
+#three:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  cursor: pointer;
+}
+
+#four:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  cursor: pointer;
+}
+
+#five:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  cursor: pointer;
+}
+
+#six:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  cursor: pointer;
+}
+
+#seven:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  cursor: pointer;
+}
+
+#eigth:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  cursor: pointer;
+}
+
+#nine:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  cursor: pointer;
+}
+
+#ten:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  cursor: pointer;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+.footer {
+  grid-area: footer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 50px;
+  background-color: #F4F4F4;
+}
+
+/* Non-mobile styles, 750px breakpoint */
+@media only screen and (min-width: 950px) {
+    /* Show the sidenav */
+    
+    .grid-container {
+     
+      grid-template-columns: 100px 290px 1fr;
+      grid-template-rows: 70px  70px 1fr 50px;
+      grid-template-areas:
+        "sidenav header header" 
+        "sidenav control-panel header-control"
+        "sidenav control-panel main"
+        "sidenav control-panel footer";
+    
+      height: 100vh;
+    }
+    
+  
+  .header__search {
+    margin-left: 0;
+  }
+
+  .sidenav {
+    position: relative;
+    transform: translateX(0);
+  }
+
+  .control-panel {
+    position: relative;
+    transform: translateX(0);
+  }
+
+  .sidenav__close-icon {
+    visibility: hidden;
+  }
+}
+
+/* Medium screens breakpoint (1050px) */
+@media only screen and (min-width: 1050px) {
+  /* Break out main cards into two columns */
+  .main-cards {
+    column-count: 2;
+  }
+}

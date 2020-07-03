@@ -1,0 +1,127 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %} Dashboard Custom {% endblock %}
+
+{% block header-control %}
+  <div class="header-control-title"><h3>FUEL CONSUMPTION SPLIT</h3> </div>
+    <div class="header-control-button"> 
+
+    </div>  
+  </div>
+{% endblock %}
+
+{% block menu %}
+<link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/v8/css/anychart-ui.min.css?hcode=c11e6e3cfefb406e8ce8d99fa8368d33" />
+<link rel="stylesheet" type="text/css" href="https://cdn.anychart.com/releases/v8/fonts/css/anychart-font.min.css?hcode=c11e6e3cfefb406e8ce8d99fa8368d33" />
+{% include 'data/menu/cpanel.html' %}
+{% endblock %}
+
+{% block main %}
+<div id="container"></div>
+{% endblock %}
+
+
+<style>
+    html, body, #container {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+</style>
+
+
+ {% block javascript %}
+ <script src="https://cdn.anychart.com/releases/8.7.1/js/anychart-core.min.js"></script>
+ <script src="https://cdn.anychart.com/releases/8.7.1/js/anychart-bundle.min.js"></script>
+ <script src="https://cdn.anychart.com/releases/8.7.1/js/anychart-base.min.js"></script>
+
+ <script src="{% static 'assets/js/device/load_device.js' %}"></script>
+ <script>
+$('input[name="datefilter"]').daterangepicker({
+      autoUpdateInput: false,
+      drops: "up",
+      
+      buttonClasses: "button",
+      applyButtonClasses: "ui blue  ",
+      cancelClass: "ui  grey ",
+      locale: {
+          cancelLabel: 'Clear'
+      }
+    });
+
+
+    let date = {}
+
+
+     const dateRangePicker =() =>{
+  $('input[name="datefilter"]').on('apply.daterangepicker', function(ev, picker) {
+  $(this).val(picker.startDate.format('DD-MM-YYYY') + ' - ' + picker.endDate.format('DD-MM-YYYY'));
+    date.range = $(this).val(picker.startDate.format('DD-MM-YYYY') + ' - ' + picker.endDate.format('DD-MM-YYYY'))[0].value
+    date.start = date.range.slice(0,11);
+    date.end = date.range.slice(13, );
+    return date
+});
+  $('input[name="datefilter"]').on('cancel.daterangepicker', function(ev, picker) {
+    $(this).val('');
+    date.range = ''
+    date.start = ''
+    date.end = ''
+    return date
+  });
+} 
+
+
+dateRangePicker();
+
+ 
+
+$('.ui.dropdown')
+.dropdown()
+;
+
+
+$('.ui.dropdown').dropdown({
+    onChange: function () {
+      let currentUser1 = $('.gate').dropdown('get text');
+ console.log(currentUser1)
+    }
+  });
+
+
+$('.ui.checkbox')
+  .checkbox()
+;
+
+
+anychart.onDocumentReady(function () {
+
+// create data
+var data = [
+  {name:   "Rebocador 1 Porto de Santos", children: [
+    {name: "Motor 1",        size: 50, value: 500},
+    {name: "Motor 2",         size: 25, value: 250},
+    {name: "Motor 3 ",        size: 12, value: 125},
+    {name: "Motor 4",         size: 12 , value:  125 }   
+  ]} 
+];
+
+// create a chart and set the data
+var chart = anychart.treeMap(data, "as-tree");
+
+// set the chart title
+chart.title().useHtml(true);
+chart.title("Treemap: Data (% x Valor)<br><br>" +
+            "<span style='font-size:12; font-style:italic'>" +
+            "Fuel Consumption Split</span>");
+
+// set the container id
+chart.container("container");
+
+// initiate drawing the chart
+chart.draw();
+});
+      </script>
+    
+ {% endblock %}

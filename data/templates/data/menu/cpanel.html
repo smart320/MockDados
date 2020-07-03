@@ -1,0 +1,85 @@
+{% load static %}
+
+
+<link rel="stylesheet" href="{% static 'assets/css/control-panel.css' %}" type="text/css">
+<link rel="stylesheet" href="{% static 'assets/css/main-section-current.css' %}" type="text/css">
+
+<div class="control-panel">
+  <div class="sidenav__close-icon">
+    <i class="fas fa-times sidenav__brand-close"></i>
+  </div>
+<div class="control-menu">
+<div class="title-menu"><h3>CONTROL PANEL</h3></div> 
+
+<div class="btn-resquest-server"><a class="fluid ui yellow button"><i class="play circle outline icon"></i>Request Server</a></div>
+<div class="btn-current"><a href="" class="fluid ui blue button inverted active"><i class="bolt icon"></i>Fuel</a></div>
+<div class="btn-pf"><a class="fluid ui blue button inverted"><i class="bolt icon"></i>Level T1</a></div>
+<div class="btn-voltage"><a class="fluid ui blue button inverted"><i class="bolt icon"></i>Energy</a></div>
+<div class="btn-frequency"><a class="fluid ui blue  button inverted"><i class="bolt icon"></i>Frequency</a></div>
+<div class="btn-power"><a class="fluid ui blue button inverted"><i class="bolt icon"></i>Power</a></div>
+<div class="btn-demand"><a class="fluid ui blue button inverted"><i class="bolt icon"></i>Demand</a></div> 
+
+</div>  
+<div class="ui divider"></div>
+<div class="chart-type">
+<div class="title-chart-type"><p>Chart Type</p></div> 
+
+
+<div class="ui icon buttons">
+<button id="btn-line" class="ui blue button inverted">
+  <i class="fa fa-line-chart "></i>
+</button>
+<button id="btn-area" class="ui blue button inverted">
+  <i class="fa fa-area-chart"></i>
+</button>
+<button id="btn-column" class="ui blue button inverted">
+  <i class="	fa fa-bar-chart"></i>
+</button>
+</div>
+
+</div>
+
+
+<div class="frequency-menu">
+<div class="frequency-title"><p>Frequency</p></div> 
+<div class="pagination">
+  <div class="ui small blue inverted buttons">
+    <button class="small ui button">H</button>
+    <button class="small ui button">D</button>
+    <button class="small ui button">W</button>
+    <button class="small ui button">M</button>
+  </div>
+      
+</div><!--end pagination-->
+</div>
+<div class="device-form">
+<div class="device-title"><p>Device</p></div>
+<div class="area-form">
+
+<div class="ui form">
+  <div class="field">
+    <select placeholder="Choose Device" class="ui dropdown" id="devices">
+
+
+    </select>
+  </div>
+</div>
+
+
+
+</div>
+</div>
+
+<div class="date-form">
+<div class="date-title"><p>Date Range</p></div>
+<div class="date-range-form">
+<div class="ui form">
+  <div class="field">
+    <input type="text" class="dropdown"  name="datefilter" value="" placeholder="Range" />
+  
+  </div>
+</div>
+</div>
+</div>
+
+</div>

@@ -1,0 +1,244 @@
+:root{
+    --main--text-padding-top: 10px;
+    --main--text-padding-left: 15px;
+    --main--text-padding-bottom: 5px;
+    --main-color: rgba(203, 201, 204, 0.616);
+  }
+  
+  .ui.inverted.blue.active.button, .ui.inverted.blue.buttons .active.button {
+    background-color:#1279c6;
+  }
+  
+  .ui.inverted.blue.button:active, .ui.inverted.blue.buttons .button:active {
+    background-color: #1279c6;
+  }
+  .ui.inverted.blue.button:hover, .ui.inverted.blue.buttons .button:hover {
+    background-color: #1279c6;
+  }
+  
+  .ui.inverted.blue.button:focus, .ui.inverted.blue.buttons .button:focus {
+    background-color: #1279c6;
+  }
+  .ui.inverted.blue.button, .ui.inverted.blue.buttons .button {
+    background-color: #ffffffd7;
+    -webkit-box-shadow: 0 0 0 1px #2185d0 inset!important;
+    box-shadow: 0 0 0 1px #2185d0 inset!important;
+    color: #2185d0;
+  }
+  
+  .ui.yellow.button, .ui.yellow.buttons .button {
+    background-color: #c59810;
+    color: #fff;
+    text-shadow: none;
+    background-image: none;
+  }
+  
+  .control-menu{
+    display: grid;
+    grid-template-columns: 0.5fr 0.5fr ;
+    grid-template-rows: 0.25fr 0.25fr 0.25fr 0.25fr 0.25fr 0.25fr 0,25fr ;
+    grid-template-areas:
+      "title-menu title-menu"
+      "btn-resquest-server btn-resquest-server"
+      "btn-current btn-pf"
+      "btn-voltage btn-frequency"
+      "btn-power btn-demand"
+      "btn-position7 btn-position8"
+     ;
+  }
+  
+  .title-menu{
+    grid-area: title-menu;
+    padding-left: 15px;
+    padding-top: 20px;
+    padding-bottom: var(--main--text-padding-bottom);
+  }
+  .btn-resquest-server{
+    align-items: center;
+    grid-area: btn-resquest-server;
+    padding: 0px 10px 10px 10px;
+  }
+  .btn-current{
+    padding-right: 5px;
+    margin-left: 10px;
+    padding-bottom: 5px;
+    grid-area: btn-current;
+  }
+  .btn-voltage{
+    padding-right: 5px;
+    margin-left: 10px;
+    padding-bottom: 5px;
+    grid-area: btn-voltage;
+  }
+  .btn-power{
+    padding-right: 5px;
+    margin-left: 10px;
+    padding-bottom: 5px;
+    grid-area: btn-power;
+  }
+  .btn-pf{
+    padding-left: 5px;
+    margin-right: 10px;
+    padding-bottom: 5px;
+    grid-area: btn-pf;
+  }
+  .btn-frequency{
+    padding-left: 5px;
+    margin-right: 10px;
+    padding-bottom: 5px;
+    grid-area: btn-frequency;
+  }
+  .btn-demand{
+    padding-left: 5px;
+    margin-right: 10px;
+    padding-bottom: 5px;
+    grid-area: btn-demand;
+  }
+  
+  .btn-position7{
+    padding-left: 10px;
+    margin-right: 5px;
+    padding-bottom: 5px;
+    grid-area: btn-position7;
+  }
+  
+  .btn-position8{
+    padding-left: 5px;
+    margin-right: 10px;
+    padding-bottom: 5px;
+    grid-area: btn-position8;
+  }
+  
+  
+  .chart-type{
+    display: grid;
+    grid-template-columns: 0.1fr 0.10fr 0.10fr ;
+    grid-template-rows: 0.5fr 40px;
+    grid-template-areas:
+      "title-chart-type title-chart-type title-chart-type"
+      "btn-line btn-area btn-column"
+    ;
+  }
+  
+  .title-chart-type{
+    grid-area: title-chart-type;
+    padding-left: var(--main--text-padding-left);
+    padding-top: var(--main--text-padding-top);
+    padding-bottom: var(--main--text-padding-bottom);
+  }
+  
+  #btn-line{
+    margin-left: 70px;
+    grid-area: btn-line;
+  }
+  #btn-area{
+    margin-left: 10px;
+    grid-area: btn-area;
+  }
+  #btn-column{
+    margin-left: 10px;
+    grid-area: btn-column;
+  }
+  
+  
+  .variable-select{
+    display: grid;
+    grid-template-columns: 0.5fr 0.5fr;
+    grid-template-rows: 0.33fr 0.33fr 0.33fr;
+    grid-template-areas:
+      "variable-title  variable-title"
+      "phase-a phase-b"
+      "phase-c neutral"
+    ;
+  }
+  
+  .variable-title{
+    grid-area: variable-title;
+    padding-left: var(--main--text-padding-left);
+    padding-top: var(--main--text-padding-top);
+    padding-bottom: var(--main--text-padding-bottom);
+  }
+  #phase-a{
+    padding-left: 40px;
+    text-align: center;
+    grid-area: phase-a;
+  }
+  #phase-b{
+    padding-right: 40px;
+    text-align: center;
+    grid-area: phase-b;
+  }
+  #phase-c{
+    padding-left: 40px;
+    text-align: center;
+    grid-area: phase-c;
+  }
+  #neutral{
+    padding-right: 47px;
+    text-align: center;
+    grid-area: neutral;
+  }
+  
+  
+  .frequency-menu{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: -1fr -1fr;
+    grid-template-areas:
+      "frequency-title"
+      "pagination"
+    ;
+  }
+  
+  .frequency-title{
+    grid-area: frequency-title;
+    padding-left: var(--main--text-padding-left);
+    padding-top: var(--main--text-padding-top);
+    padding-bottom: var(--main--text-padding-bottom);
+  }
+  .pagination{
+    margin-left: 45px;
+    grid-area: pagination;
+  }
+  
+  .device-form{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: -1fr -1fr;
+    grid-template-areas:
+      "device-title"
+      "area-form"
+    ;
+  }
+  
+  .device-title{
+    grid-area: device-title;
+    padding-left: var(--main--text-padding-left);
+    padding-top: var(--main--text-padding-top);
+    padding-bottom: var(--main--text-padding-bottom);
+  }
+  .area-form{
+    padding: 0px 10px 0px 10px;
+    grid-area: area-form;
+  }
+  
+  .date-form{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: -1fr -1fr;
+    grid-template-areas:
+      "date-title"
+      "date-range-form"
+    ;
+  }
+  
+  .date-title{
+    grid-area: date-title;
+    padding-left: var(--main--text-padding-left);
+    padding-top: var(--main--text-padding-top);
+    padding-bottom: var(--main--text-padding-bottom);
+  }
+  .date-range-form{
+    padding: 0px 10px 10px 10px;
+    grid-area: date-range-form;
+  }

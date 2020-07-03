@@ -1,6 +1,15 @@
 from django.db import models
 from company.models import Company
 from django.utils import timezone
+from stdimage import StdImageField
+import uuid
+
+
+
+def get_file_path(_instance, filename):
+    ext = filename.split('.')[-1]
+    filename = f'{uuid.uuid4()}.{ext}'
+    return filename
 
 
 class Device(models.Model):
@@ -17,3 +26,22 @@ class Device(models.Model):
 
     def __str__(self):
         return self.text
+
+
+class Motor(models.Model):
+    id = models.AutoField(primary_key=True)
+    tag = models.CharField(max_length=30, blank=False) 
+    function = models.CharField('Function', max_length=50, blank=True)
+    motor = models.CharField('Motor', max_length=50, blank=True)
+    fuel = models.CharField('Fuel', max_length=50, blank=False)
+    power = models.CharField(max_length=40, blank=False)
+    controller = models.CharField(max_length=30, blank=False)
+    operation = models.CharField(max_length=30, blank=True)
+    capacity = models.CharField(max_length=50, blank=False)
+    hour_meter = models.CharField(max_length=50, blank=True)
+    oil_change = models.CharField(max_length=50, blank=True)
+    image = StdImageField('Image', upload_to=get_file_path, default='device/LogoSmart320.png' ,variations={'thumb': {'width': 50, 'height': 50, 'crop': True}})
+    year = models.DateTimeField(('date joined'), default=timezone.now)
+
+    def __str__(self):
+        return self.motor

@@ -8,7 +8,27 @@ from django.core import serializers
 from django.http import JsonResponse
 
 
-# Create your views here.
+def fuel(request):
+    return render(request, 'data/fuel.html')
+
+
+def fuel_compare(request):
+    return render(request, 'data/fuel_compare.html')
+
+
+def split(request):
+    return render(request, 'data/split.html')
+
+
+def devices(request):
+    devices = Device.objects.all()
+    #else:
+    #    areas = Areas.objects.filter(empresa__permission_name=group_user_str)
+    lista_json = serializers.serialize('json', devices)
+    return JsonResponse(lista_json, safe=False)
+
+
+
 def fuel_list(request):
     dict = {}
     data = ()

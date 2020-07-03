@@ -1,0 +1,273 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %} Dashboard Custom {% endblock %}
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+{% block header-control %}
+  <div class="header-control-title"><h3>MOTOR LIST</h3> </div>
+    <div class="header-control-button"> 
+        <a  class="fluid ui yellow button test button "><i class="plus circle  icon"></i>New Device</a>
+    </div>  
+  </div>
+{% endblock %}
+
+{% block menu %}
+{% include 'device/menu/cpanel.html' %}
+{% endblock %}
+
+{% block main %}
+<style>
+
+/* Font */
+@import url('https://fonts.googleapis.com/css?family=Quicksand:400,700');
+
+/* Design */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+
+
+body {
+ 
+  font-style: normal;
+  font-weight: 400;
+  letter-spacing: 0;
+
+}
+
+.main{
+  padding: 20px;
+}
+
+h1 {
+    font-size: 24px;
+    font-weight: 400;
+    text-align: center;
+}
+
+.card_image {
+  width: 400px;
+  height: 100px;
+  object-fit: cover;
+  text-align: center;
+ 
+}
+
+
+
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  justify-content: flex-start;
+}
+
+.cards_item {
+  display: flex;
+  padding: 0.4rem;
+}
+
+@media (min-width: 600px) {
+  .cards_item {
+    width: 400px;
+  }
+}
+
+@media (min-width: 1000px) {
+  .cards_item {
+    width: 50%;
+  }
+}
+
+@media (min-width: 1500px) {
+  .cards_item {
+    width: 400px;
+  }
+}
+
+.card {
+  background-color: #fff;
+  border-radius: 0.5rem;
+  box-shadow: 0 20px 40px -14px rgba(0, 0, 0, 0.25);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  height: 750px;
+  width: 400px;
+}
+
+.card_content {
+  padding: 1rem;
+  background: #1f88be;
+}
+
+.card_title {
+  color: #fff;
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: capitalize;
+  margin: 0px;
+  text-align: center;
+}
+
+.card_info {
+  color: #5c5a5a;
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: capitalize;
+  margin: 20px;
+  text-align: center;
+}
+
+.card_text {
+  color: #5c5a5a;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  margin-bottom: 0.25rem;    
+  font-weight: 400;
+  display: inline-block;
+
+}
+.card_data{
+  padding: 0.1rem;
+  padding-left: 2rem;
+  background-color: #d4d4d545;
+  height: 750px;
+}
+.card_text_data{
+    display: inline-block;
+    vertical-align: top;
+    align-items: center;
+}
+.card_footer{
+  background-color: #d4d4d545;  
+  padding-bottom: 20px;
+  text-align: center;
+}
+
+#left {
+  width: 30%;
+  display: inline-block;
+  padding-left: 0px;
+  padding-bottom: 5px;
+}
+#right {
+  width: 70%;
+  display: inline-block;
+  font-weight: bold;
+}
+
+#left_data {
+ font-size: 14px;
+ width: 100%;
+ padding: 2px;
+}
+#right_data {
+ font-size: 14px;
+ width: 100%;
+ padding: 0;
+ font-weight: bold;
+}
+.ui.divider {
+    margin: 0.7rem;
+
+}
+
+    </style>
+
+<div class="main">
+  
+    <ul class="cards">
+        {% for motor in object_list.motor %}  
+      <li class="cards_item">
+        <div class="card">
+          
+          <div class="card_content">
+            <h2 class="card_title">{{ motor.function|upper }}</h2>
+            
+            
+           
+          </div>
+            <div class="card_image">
+              <img src="{{ motor.image.url }}"  
+              style="width: 100px;height: 100px; object-fit: cover;">
+     
+            </div>
+                 <div class="card_data">
+                    <h2 class="card_info">Information</h2>
+                    <div id="left">Tag:</div><div id="right">{{ motor.tag }}</div>
+                   
+                    <div id="left">Motor:</div><div id="right">{{ motor.motor }}  </div>
+                   
+                    <div id="left">Fuel:</div><div id="right">{{ motor.fuel }} </div>
+                    
+                    <div id="left">Power:</div><div id="right">{{ motor.power }}</div>
+                   
+                
+                    <div class="ui divider"></div>
+                    <div id="_data">Controller:</div><div id="right_data">{{ motor.controller }}</div>
+                    <div class="ui divider"></div>
+                    <div id="_data">Operation:</div><div id="right_data">{{ motor.operation }}</div>
+                    <div class="ui divider"></div>
+                    <div id="_data">Capacity:</div><div id="right_data">{{ motor.capacity }}</div>
+                    <div class="ui divider"></div>
+                    <div id="_data">Hour Meter:</div><div id="right_data">{{ motor.hour_meter }}</div>
+                    <div class="ui divider"></div>
+                    <div id="_data">Oil Change:</div><div id="right_data">{{ motor.oil_change }}</div>
+                    <div class="ui divider"></div>
+                    <div id="_data">Fab Year:</div><div id="right_data">{{ motor.year }}</div>
+
+                </div>
+
+                 <div class="card_footer">
+                     <button class="ui blue icon button"><i class="edit icon"></i></button>
+                     <button class="ui yellow icon button"><i class="trash alternate icon"></i></button>
+                </div>
+        </div>
+  
+  
+      </li>
+      {% endfor %}
+     
+    </ul>
+  </div>
+
+
+<style>
+    .ui.modal>.header {
+    display: block;
+    background: #1f88be;
+    text-align: center;
+    box-shadow: none;
+    color: #fff;
+  
+}
+.ui.modal>.content {
+    background: #f9fafb;
+}
+.header {
+    background-color: #ffffff00;
+}
+
+</style>
+
+
+
+
+
+{% endblock %}
+
+
+ {% block javascript %}
+
+
+
+
+ {% endblock %}

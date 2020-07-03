@@ -19,10 +19,14 @@ from django.conf import settings
 from django.conf.urls.static import static
 
 urlpatterns = [
+    path('', include('dashboard.urls', namespace='dashboard')),
     path('admin/', admin.site.urls),
     path('data/', include('data.urls', namespace='data')),
-   
-]
-admin.site.site_header = "Energy320 Admin"
-admin.site.site_title = "Energy320 Admin Portal"
-admin.site.index_title = "Welcome to Energy320 Admin Portal"
+    path('device/', include('device.urls', namespace='device')),
+]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+
+
+admin.site.site_header = "Mega Hack Admin"
+admin.site.site_title = "Mega Hack Admin Portal"
+admin.site.index_title = "Welcome to Mega Hack Admin Portal"
