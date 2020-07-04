@@ -20,7 +20,7 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
    
-    <link rel="stylesheet" href="{% static 'assets/css/style.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'assets/css/style1.css' %}" type="text/css">
 
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
   </head>
@@ -57,12 +57,12 @@
             <div id="logo" class="" > 
               <img src="{% static 'assets/images/logo/ws1.png' %}" alt="" style="max-width:100px;
               max-height:80px;
-             ">     
+             ">       
              
             </div>
              
             <div id="bar1"></div>
-            <div id="one" class="" > 
+            <div id="one" class="" >
               
               <a href="{% url 'dashboard:dashboard_custom' %}"><i class="fa fa-television fa-lg "></i></a>        
               <span id="sidebarTitle">Dashboard</span>
@@ -113,11 +113,7 @@
 
 
       </aside>
-      
-      {% block menu %}
-      
-      {% endblock %}
-     
+   
 
                                 
              

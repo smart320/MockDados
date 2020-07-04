@@ -186,7 +186,7 @@ body {
   display: flex;
   justify-content: center;
   background-color: #fff;
- 
+
 }
 
 #bar1{
@@ -453,13 +453,13 @@ a:hover {
     
     .grid-container {
      
-      grid-template-columns: 100px 290px 1fr;
-      grid-template-rows: 70px  70px 1fr 50px;
+      grid-template-columns: 100px  1fr;
+      grid-template-rows: 70px  70px auto 50px;
       grid-template-areas:
-        "sidenav header header" 
-        "sidenav control-panel header-control"
-        "sidenav control-panel main"
-        "sidenav control-panel footer";
+        "sidenav header " 
+        "sidenav  header-control"
+        "sidenav  main"
+        "sidenav  footer";
     
       height: 100vh;
     }

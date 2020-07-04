@@ -45,3 +45,15 @@ class Motor(models.Model):
 
     def __str__(self):
         return self.motor
+
+
+class MotorData(models.Model):
+    id = models.AutoField(primary_key=True)
+    operation = models.CharField('Operation', max_length=50, blank=True)
+    motor = models.CharField('Motor', max_length=50, blank=True)
+    day = models.CharField('Consumption_day', max_length=50, blank=False)
+    yesterday = models.CharField(max_length=40, blank=False)
+   
+
+    def __str__(self):
+        return self.motor
