@@ -6,9 +6,8 @@
 
   <img alt="License" src="https://img.shields.io/static/v1?label=license&message=MIT&color=7159c1&labelColor=000000">
 </p>
-<br>
 
-## :rocket: Tecnologia
+:rocket: Tecnologia
 
 Esse projeto foi desenvolvido com [Python](https://www.python.org/) - front, backend com mock dados
 
