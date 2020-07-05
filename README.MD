@@ -1,20 +1,12 @@
-<h1 align="center">
-       // colocar uma imagem do megahack aquui
-</h1>
-
-<h4 align="center">
+<h2 align="center">
   🚀 Mega Hack 3.0
-</h4>
+</h2>
 
 <p align="center">
 
   <img alt="License" src="https://img.shields.io/static/v1?label=license&message=MIT&color=7159c1&labelColor=000000">
 </p>
 <br>
-
-<p align="center">
-  //img
-</p>
 
 ## :rocket: Tecnologia
 
