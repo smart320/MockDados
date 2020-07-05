@@ -32,7 +32,7 @@
 Esse projeto foi desenvolvido com as seguintes tecnologias:
 
 - [Node.js](https://nodejs.org/en/) - backend com mock dados
-- [Python] (https://www.python.org/) - front
+- [Python](https://www.python.org/) - front
 
 ## 💻 Projeto
 
