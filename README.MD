@@ -29,12 +29,12 @@
 
 Esse projeto foi desenvolvido com as seguintes tecnologias:
 
-- [Node.js](https://nodejs.org/en/) - backend com mock dados
-- [Python](https://www.python.org/) - front
+
+- [Python](https://www.python.org/) - front, backend com mock dados
 
 ## 💻 Projeto
 
-O SysssTem é uma plataforma para os trabalhadores de rebocadores acompanharem os registros dos motores.
+O Fuel Save System é uma plataforma para os trabalhadores de rebocadores acompanharem os registros dos motores.
 
 ## 🔖 Layout
 
