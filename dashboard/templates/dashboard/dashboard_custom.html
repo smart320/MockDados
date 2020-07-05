@@ -223,11 +223,11 @@ h1 {
 
   <style>
     #container {
-    padding-top: 50px;  
+    padding-top: 10px;  
     width: 1208px;
     height: 500px;
     margin: 10px;
-    margin-left: 193px;
+    margin-left: 287px;
     box-shadow: 0 20px 40px -14px rgba(0, 0, 0, 0.25);
     border: 1px solid #ccc;
     
@@ -318,7 +318,8 @@ anychart.onDocumentReady(function () {
 
     // create stock chart
     var chart = anychart.stock();
-
+    // set chart title
+    chart.title('Fuel Consumption Motors Real Time ');
     // create plot on the chart
     var plot = chart.plot(0);
     plot.yScale('log');
@@ -329,7 +330,10 @@ anychart.onDocumentReady(function () {
     plot.spline(msftDataTable.mapAs({'value': 4})).name('Motor 3');
     plot.spline(orclDataTable.mapAs({'value': 4})).name('Motor 4');
 
-
+    plot.yGrid(true)
+                .xGrid(true)
+                .yMinorGrid(true)
+                .xMinorGrid(true);
     // create scroller series with mapped data
     chart.scroller().line(djiDataTable.mapAs({'value': 4}));
 
