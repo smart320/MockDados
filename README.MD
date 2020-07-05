@@ -35,7 +35,7 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 
 ## 💻 Projeto
 
-O SysssTem é uma plataforma para os trabalhadores de rebocadores acompanharem os registros dos motores.
+O Fuel Save System é uma plataforma para os trabalhadores de rebocadores acompanharem os registros dos motores.
 
 ## 🔖 Layout
 
