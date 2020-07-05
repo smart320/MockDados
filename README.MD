@@ -24,7 +24,7 @@
 <br>
 
 <p align="center">
-  <img alt="BeTheHero" src=".github/bethehero.png" width="100%">
+  //img
 </p>
 
 ## :rocket: Tecnologias
@@ -32,11 +32,11 @@
 Esse projeto foi desenvolvido com as seguintes tecnologias:
 
 - [Node.js](https://nodejs.org/en/) - backend com mock dados
-- [Python] (https://www.python.org/)
+- [Python] (https://www.python.org/) - front
 
 ## 💻 Projeto
 
-O SysssTem é uma plataforma.
+O SysssTem é uma plataforma para os trabalhadores de rebocadores acompanharem os registros dos motores.
 
 ## 🔖 Layout
 
