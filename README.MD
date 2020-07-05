@@ -1,6 +1,5 @@
 <h1 align="center">
-    //<img alt="DevRadar" title="#delicinha" src=".github/bethehero.svg" width="200px" />
-    // colocar uma imagem do megahack aquui
+       // colocar uma imagem do megahack aquui
 </h1>
 
 <h4 align="center">
